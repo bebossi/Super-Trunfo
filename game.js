@@ -36,8 +36,8 @@ class Game {
             {
                 name: "Ellie",
                 attributesCharacter: {
-                    power: 60,
-                    agility: 70,
+                    power: 40,
+                    agility: 90,
                     intelligence: 90
                 }
             },
@@ -70,37 +70,36 @@ class Game {
         this.player2Cards = [];
     }
 
-    shuffleCards(spaceCardP1, spaceCardP2) {
+    shuffleCards(spaceCardP1) {
         let cartaSorteadaP1 = Math.floor(Math.random() * this.allCards.length);
         let cartaSorteadaP2 = Math.floor(Math.random() * this.allCards.length);
 
-        this.player1Cards = this.allCards[cartaSorteadaP1];             //sorteando carta
+        this.player1Cards = this.allCards[cartaSorteadaP1];
         this.player2Cards = this.allCards[cartaSorteadaP2];
-        if (this.player1Cards === this.player2Cards) {                     // negando que sejam iguais
+        if (this.player1Cards === this.player2Cards) {
             return
-        }
+        };
 
-        //    let cartasJaSorteadas = this.allCards.filter((item) => {        // tentando que nao se possa repetir essa carta no sorteio
-        //     item === this.player1Cards
-        //    });
+    //   this.allCards.splice(cartaSorteadaP1, 1)        acho que daria certo, mas da erro, pq a img esta relacionada ao index das cartas
+
+        console.log(this.allCards)
 
         const img1 = document.createElement("img");
-        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);                    
-        img1.classList.add("img");3,
+        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);
+        img1.classList.add("img");
+        if (spaceCardP1.children.length !== 0) {
+            spaceCardP1.removeChild(spaceCardP1.lastChild)
+            spaceCardP1.removeChild(spaceCardP1.lastChild)
+        };
         spaceCardP1.appendChild(img1);
 
-        const attributesCharacter = document.createElement("div")
-        attributesCharacter.classList.add("attributesCharacter")
-        spaceCardP1.appendChild(attributesCharacter)
-        attributesCharacter.innerHTML = `<p>Power:</p> ${this.player1Cards.attributesCharacter.power}   
-   <p>Agility:</p> ${this.player1Cards.attributesCharacter.agility} 
-   <p>Intelligence:</p> ${this.player1Cards.attributesCharacter.intelligence}`
 
-        const img2 = document.createElement("img");
-        img2.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player2Cards)}.jpg`)
-        img2.classList.add("img")
-
-        spaceCardP2.appendChild(img2);
+        const attributesCharacter = document.createElement("div");
+        attributesCharacter.classList.add("attributesCharacter");
+        spaceCardP1.appendChild(attributesCharacter);
+        attributesCharacter.innerHTML = `<p>Power:${this.player1Cards.attributesCharacter.power}</p>   
+           <p>Agility:${this.player1Cards.attributesCharacter.agility} </p> 
+           <p>Intelligence:${this.player1Cards.attributesCharacter.intelligence}</p> `;
     }
 
 
@@ -112,39 +111,55 @@ class Game {
         const scoreP1 = document.getElementById("scoreP1");
         const scoreP2 = document.getElementById("scoreP2");
 
-        console.log(this.player1Cards)
+
         if (attributePower.checked === true) {
-            console.log(this.player1Cards)
-            console.log(this.player2Cards)
-            if (this.player1Cards.power > this.player2Cards.power) {
-                console.log("Cai no if")
-                scoreP1.innerText = Number(scoreP1.innerText) + 1               // elemento.innerText = Number(elemento.innerText) + 1               
-                return "Player 1 ganhou"
-            } else if(this.player1Cards.power < this.player2Cards.power) {
-                scoreP2.innerText = Number(scoreP2.innerText) + 1  
-                return "Player 2 ganhou"
+            if (this.player1Cards.attributesCharacter.power > this.player2Cards.attributesCharacter.power) {
+                scoreP1.innerText = Number(scoreP1.innerText) + 1
+            } else if (this.player1Cards.attributesCharacter.power < this.player2Cards.attributesCharacter.power) {
+                scoreP2.innerText = Number(scoreP2.innerText) + 1
             }
-            console.log(scoreP1.innerText)
-            console.log(scoreP2.innerText)
-
-        }
-        if(attributeIntelligence.checked == true){
-            if(this.player1Cards.intelligence > this.player2Cards.intelligence){
-                return "player 1 ganhou"
-            } else{
-                return "player 2 ganhou"
+        };
+        if (attributeIntelligence.checked == true) {
+            if (this.player1Cards.attributesCharacter.intelligence > this.player2Cards.attributesCharacter.intelligence) {
+                scoreP1.innerText = Number(scoreP1.innerText) + 1
+            } else if (this.player1Cards.attributesCharacter.intelligence < this.player2Cards.attributesCharacter.intelligence) {
+                scoreP2.innerText = Number(scoreP2.innerText) + 1
             }
-        }
-        if(attributeAgility.checked == true){
-            if(this.player1Cards.agility > this.player2Cards.agility){
-                return "player 1 ganhou"
-            } else{
-                return "player 2 ganhou"
+        };
+        if (attributeAgility.checked == true) {
+            if (this.player1Cards.attributesCharacter.agility > this.player2Cards.attributesCharacter.agility) {
+                scoreP1.innerText = Number(scoreP1.innerText) + 1
+            } else if (this.player1Cards.attributesCharacter.agility < this.player2Cards.attributesCharacter.agility) {
+                scoreP2.innerText = Number(scoreP2.innerText) + 1
             }
-        }
-
+        };
     }
 
+    exibirCardP2(spaceCardP2) {
+        const img2 = document.createElement("img");
+        img2.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player2Cards)}.jpg`);
+        img2.classList.add("img");
+        if (spaceCardP2.children.length !== 0) {
+            spaceCardP2.removeChild(spaceCardP2.lastChild)
+            spaceCardP2.removeChild(spaceCardP2.lastChild)
+        };
+        spaceCardP2.appendChild(img2);
+
+        const attributesCharacter = document.createElement("div");
+        attributesCharacter.classList.add("attributesCharacter");
+        spaceCardP2.appendChild(attributesCharacter);
+        attributesCharacter.innerHTML = `<p>Power:${this.player2Cards.attributesCharacter.power}</p>   
+         <p>Agility:${this.player2Cards.attributesCharacter.agility} </p> 
+         <p>Intelligence:${this.player2Cards.attributesCharacter.intelligence}</p>`
+    }
+
+    proximaRodada(){
+        spaceCardP1.removeChild(spaceCardP1.lastChild)
+        spaceCardP1.removeChild(spaceCardP1.lastChild)
+        spaceCardP2.removeChild(spaceCardP2.lastChild)
+        spaceCardP2.removeChild(spaceCardP2.lastChild)
+
+    }
 
 
 

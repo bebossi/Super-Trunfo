@@ -4,17 +4,23 @@ const header = document.getElementById("cabecalho")
 const spaceCardP1 = document.getElementById("spaceCardP1");
 const spaceCardP2 = document.getElementById("spaceCardP2");
 const btnAttribute = document.getElementById("btnAttribute");
+const BtnProxima = document.getElementById("BtnProxima")
 
+const game = new Game();
 
 btnSortear.addEventListener("click", () => {
-    btnSortear.disabled = true
-    const game = new Game();
-    game.shuffleCards(spaceCardP1, spaceCardP2);
+    btnSortear.disabled = true;
+    game.shuffleCards(spaceCardP1);
 
 })
 
-btnAttribute.addEventListener("click", () => {
-    btnSortear.disabled = false
-    const game = new Game();
-    game.chooseAttribute()
+btnAttribute.addEventListener("click", () => {    
+    btnSortear.disabled = false;
+    btnAttribute.disabled = true;
+    game.chooseAttribute();
+    game.exibirCardP2(spaceCardP2);
+})
+
+BtnProxima.addEventListener("click", () =>{
+    game.proximaRodada()
 })
