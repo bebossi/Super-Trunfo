@@ -85,8 +85,8 @@ class Game {
         //    });
 
         const img1 = document.createElement("img");
-        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);                        //falta associar cada imagem a um objeto
-        img1.classList.add("img");
+        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);                    
+        img1.classList.add("img");3,
         spaceCardP1.appendChild(img1);
 
         const attributesCharacter = document.createElement("div")
@@ -105,16 +105,28 @@ class Game {
 
 
     chooseAttribute() {
+
         const attributePower = document.getElementById("attributePower");
         const attributeAgility = document.getElementById("attributeAgility");
         const attributeIntelligence = document.getElementById("attributeIntelligence");
+        const scoreP1 = document.getElementById("scoreP1");
+        const scoreP2 = document.getElementById("scoreP2");
 
-        if (attributePower.checked == true) {
+        console.log(this.player1Cards)
+        if (attributePower.checked === true) {
+            console.log(this.player1Cards)
+            console.log(this.player2Cards)
             if (this.player1Cards.power > this.player2Cards.power) {
+                console.log("Cai no if")
+                scoreP1.innerText = Number(scoreP1.innerText) + 1               // elemento.innerText = Number(elemento.innerText) + 1               
                 return "Player 1 ganhou"
-            } else {
+            } else if(this.player1Cards.power < this.player2Cards.power) {
+                scoreP2.innerText = Number(scoreP2.innerText) + 1  
                 return "Player 2 ganhou"
             }
+            console.log(scoreP1.innerText)
+            console.log(scoreP2.innerText)
+
         }
         if(attributeIntelligence.checked == true){
             if(this.player1Cards.intelligence > this.player2Cards.intelligence){

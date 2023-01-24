@@ -1,53 +1,75 @@
-#cabecalho{
+#cabecalho {
     text-align: center;
-    
+
 }
+
 #cabecalho img {
     width: 100%;
     height: 100%;
 }
-.players{
-    display: flex;
-    align-items: center;
-}
-#player1Side{
-    width: 50%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#player2Side{
-    width: 50%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+.players {
+    display: flex;
+    align-items: center;
 }
-#spaceCardP1{
+
+#player1Side {
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   row-gap: 20px;
+}
+
+#player2Side {
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   row-gap: 20px;
+}
+
+#spaceCardP1 {
     width: 200px;
     height: 300px;
     justify-content: center;
     background-color: grey;
 }
-#spaceCardP2{
+
+#spaceCardP2 {
     width: 200px;
     height: 300px;
     justify-content: center;
     background-color: black;
 }
-#btnAttribute{
+
+#btnAttribute {
     align-items: center;
 }
-#attributes{
+
+#attributes {
     display: flex;
 }
-.img{
+
+.img {
     width: 100%;
     height: 100%;
 }
-.attributesCharacter{
+
+.attributesCharacter {
     width: 30px;
     height: 30px;
+}
+
+.scoreP1 {
+    width: 100px;
+    height: 50px;
+}
+.scoreP2 {
+    width: 100px;
+    height: 50px;
 }
