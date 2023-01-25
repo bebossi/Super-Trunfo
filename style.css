@@ -1,5 +1,6 @@
 #cabecalho {
     text-align: center;
+    color:rgb(234, 135, 96)
 
 }
 
@@ -11,44 +12,49 @@
 .players {
     display: flex;
     align-items: center;
+
+}
+#body{
+    background-color: #90490f
 }
 
 #player1Side {
     width: 50%;
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-   align-items: center;
-   row-gap: 20px;
+    /* justify-content: center; */
+    align-items: center;
+    row-gap: 20px;
 }
 
 #player2Side {
     width: 50%;
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-   align-items: center;
-   row-gap: 20px;
+    /* justify-content: center; */
+    align-items: center;
+    row-gap: 20px;
 }
 
 #spaceCardP1 {
     width: 200px;
-    height: 300px;
+    height: 280px;
     justify-content: center;
-    background-color: grey;
+    background-color: #ffdb58;
 }
 
 #spaceCardP2 {
     width: 200px;
-    height: 300px;
+    height: 280px;
     justify-content: center;
-    background-color: black;
+    background-color: #ffdb58;
 }
 
 #btnAttribute {
     align-items: center;
+    color: rgb(191, 120, 50);
 }
 
 #attributes {
@@ -61,18 +67,29 @@
 }
 
 .attributesCharacter {
-    width: 30px;
-    height: 30px;
+    width: 200px;
+    height: 100px;
+    background-color: #90490f;
+    color: rgb(191, 120, 50);
+
+}
+.attributesCharacter p {
+    background-color: #90490f;
 }
 
 .scoreP1 {
     width: 100px;
-    height: 50px;
+    height: 40px;
+    color: rgb(255, 255, 255);
 }
+
+
 .scoreP2 {
     width: 100px;
-    height: 50px;
+    height: 40px;
+    color: rgb(191, 120, 50);
 }
+
 #proximaRodada {
     display: flex;
     justify-content: center;

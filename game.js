@@ -68,6 +68,7 @@ class Game {
         ];
         this.player1Cards = [];
         this.player2Cards = [];
+        this.takenCards = [];
     }
 
     shuffleCards(spaceCardP1) {
@@ -77,12 +78,18 @@ class Game {
         this.player1Cards = this.allCards[cartaSorteadaP1];
         this.player2Cards = this.allCards[cartaSorteadaP2];
         if (this.player1Cards === this.player2Cards) {
-            return
-        };
+            return this.shuffleCards(spaceCardP1);
+        }
 
-    //   this.allCards.splice(cartaSorteadaP1, 1)        acho que daria certo, mas da erro, pq a img esta relacionada ao index das cartas
-
-        console.log(this.allCards)
+        if (this.takenCards.includes(this.player1Cards)) {
+            return this.shuffleCards(spaceCardP1);
+          }
+          if (this.takenCards.includes(this.player2Cards)) {
+            return this.shuffleCards(spaceCardP1);
+          }
+          this.takenCards.push(this.player1Cards, this.player2Cards);
+          console.log(this.takenCards)
+  
 
         const img1 = document.createElement("img");
         img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);
@@ -93,7 +100,6 @@ class Game {
         };
         spaceCardP1.appendChild(img1);
 
-
         const attributesCharacter = document.createElement("div");
         attributesCharacter.classList.add("attributesCharacter");
         spaceCardP1.appendChild(attributesCharacter);
@@ -101,7 +107,6 @@ class Game {
            <p>Agility:${this.player1Cards.attributesCharacter.agility} </p> 
            <p>Intelligence:${this.player1Cards.attributesCharacter.intelligence}</p> `;
     }
-
 
     chooseAttribute() {
 
@@ -153,13 +158,21 @@ class Game {
          <p>Intelligence:${this.player2Cards.attributesCharacter.intelligence}</p>`
     }
 
-    proximaRodada(){
-        spaceCardP1.removeChild(spaceCardP1.lastChild)
-        spaceCardP1.removeChild(spaceCardP1.lastChild)
-        spaceCardP2.removeChild(spaceCardP2.lastChild)
-        spaceCardP2.removeChild(spaceCardP2.lastChild)
+    proximaRodada() {
+        spaceCardP1.removeChild(spaceCardP1.lastChild);
+        spaceCardP1.removeChild(spaceCardP1.lastChild);
+        spaceCardP2.removeChild(spaceCardP2.lastChild);
+        spaceCardP2.removeChild(spaceCardP2.lastChild);
+    };
 
-    }
+
+
+
+
+
+
+
+
 
 
 
