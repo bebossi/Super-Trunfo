@@ -41,15 +41,6 @@ attributeIntelligence.addEventListener("click", () => {
     attributeIntelligence.disabled = true;
 })
 
-// btnAttribute.addEventListener("click", () => {    
-//     game.chooseAttribute();
-//     game.exibirCardP2(spaceCardP2);
-//     attributePower.disabled = true;
-//     attributeAgility.disabled = true;
-//     attributeIntelligence.disabled = true;
-// })
-
-
 BtnProxima.addEventListener("click", () => {
     btnSortear.disabled = false;
     attributePower.checked = false;

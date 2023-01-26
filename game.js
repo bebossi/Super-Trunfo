@@ -87,9 +87,7 @@ class Game {
           if (this.takenCards.includes(this.player2Cards)) {
             return this.shuffleCards(spaceCardP1);
           }
-          this.takenCards.push(this.player1Cards, this.player2Cards);
-          console.log(this.takenCards)
-  
+          this.takenCards.push(this.player1Cards, this.player2Cards);  
 
         const img1 = document.createElement("img");
         img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);
@@ -106,6 +104,10 @@ class Game {
         attributesCharacter.innerHTML = `<p>Power:${this.player1Cards.attributesCharacter.power}</p>   
            <p>Agility:${this.player1Cards.attributesCharacter.agility} </p> 
            <p>Intelligence:${this.player1Cards.attributesCharacter.intelligence}</p> `;
+
+           if(this.takenCards.length == 8){
+            alert("FIM DE JOGO")
+           }
     }
 
     chooseAttribute() {
@@ -138,6 +140,7 @@ class Game {
                 scoreP2.innerText = Number(scoreP2.innerText) + 1
             }
         };
+
     }
 
     exibirCardP2(spaceCardP2) {
@@ -165,6 +168,7 @@ class Game {
         spaceCardP2.removeChild(spaceCardP2.lastChild);
     };
 
+ 
 
 
 
