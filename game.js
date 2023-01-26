@@ -101,9 +101,9 @@ class Game {
         const attributesCharacter = document.createElement("div");
         attributesCharacter.classList.add("attributesCharacter");
         spaceCardP1.appendChild(attributesCharacter);
-        attributesCharacter.innerHTML = `<p>Power:${this.player1Cards.attributesCharacter.power}</p>   
-           <p>Agility:${this.player1Cards.attributesCharacter.agility} </p> 
-           <p>Intelligence:${this.player1Cards.attributesCharacter.intelligence}</p> `;
+        attributesCharacter.innerHTML = `<p>Power: ${this.player1Cards.attributesCharacter.power}</p>   
+           <p>Agility: ${this.player1Cards.attributesCharacter.agility} </p> 
+           <p>Intelligence: ${this.player1Cards.attributesCharacter.intelligence}</p> `;
 
            if(this.takenCards.length == 8){
             alert("FIM DE JOGO")
@@ -156,9 +156,9 @@ class Game {
         const attributesCharacter = document.createElement("div");
         attributesCharacter.classList.add("attributesCharacter");
         spaceCardP2.appendChild(attributesCharacter);
-        attributesCharacter.innerHTML = `<p>Power:${this.player2Cards.attributesCharacter.power}</p>   
-         <p>Agility:${this.player2Cards.attributesCharacter.agility} </p> 
-         <p>Intelligence:${this.player2Cards.attributesCharacter.intelligence}</p>`
+        attributesCharacter.innerHTML = `<p>Power: ${this.player2Cards.attributesCharacter.power}</p>   
+         <p>Agility: ${this.player2Cards.attributesCharacter.agility} </p> 
+         <p>Intelligence: ${this.player2Cards.attributesCharacter.intelligence}</p>`
     }
 
     proximaRodada() {
