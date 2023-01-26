@@ -89,23 +89,7 @@ class Game {
           }
           this.takenCards.push(this.player1Cards, this.player2Cards);  
 
-        const img1 = document.createElement("img");
-        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);
-        img1.classList.add("img");
-        if (spaceCardP1.children.length !== 0) {
-            spaceCardP1.removeChild(spaceCardP1.lastChild)
-            spaceCardP1.removeChild(spaceCardP1.lastChild)
-        };
-        spaceCardP1.appendChild(img1);
-
-        const attributesCharacter = document.createElement("div");
-        attributesCharacter.classList.add("attributesCharacter");
-        spaceCardP1.appendChild(attributesCharacter);
-        attributesCharacter.innerHTML = `<p>Power: ${this.player1Cards.attributesCharacter.power}</p>   
-           <p>Agility: ${this.player1Cards.attributesCharacter.agility} </p> 
-           <p>Intelligence: ${this.player1Cards.attributesCharacter.intelligence}</p> `;
-
-           
+          this.exibirCardP1()
     }
 
     chooseAttribute() {
@@ -137,6 +121,23 @@ class Game {
             }
         };
 
+    }
+    exibirCardP1(){
+        const img1 = document.createElement("img");
+        img1.setAttribute("src", `./imagens/${this.allCards.indexOf(this.player1Cards)}.jpg`);
+        img1.classList.add("img");
+        if (spaceCardP1.children.length !== 0) {
+            spaceCardP1.removeChild(spaceCardP1.lastChild)
+            spaceCardP1.removeChild(spaceCardP1.lastChild)
+        };
+        spaceCardP1.appendChild(img1);
+
+        const attributesCharacter = document.createElement("div");
+        attributesCharacter.classList.add("attributesCharacter");
+        spaceCardP1.appendChild(attributesCharacter);
+        attributesCharacter.innerHTML = `<p>Power: ${this.player1Cards.attributesCharacter.power}</p>   
+           <p>Agility: ${this.player1Cards.attributesCharacter.agility} </p> 
+           <p>Intelligence: ${this.player1Cards.attributesCharacter.intelligence}</p> `;
     }
 
     exibirCardP2(spaceCardP2) {

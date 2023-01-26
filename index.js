@@ -53,4 +53,5 @@ BtnProxima.addEventListener("click", () => {
     attributeAgility.disabled = false;
     attributeIntelligence.disabled = false;
     game.proximaRodada(scoreP1, scoreP2)
+    // game.maquinaJoga()
 })
