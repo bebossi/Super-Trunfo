@@ -105,19 +105,15 @@ class Game {
            <p>Agility: ${this.player1Cards.attributesCharacter.agility} </p> 
            <p>Intelligence: ${this.player1Cards.attributesCharacter.intelligence}</p> `;
 
-           if(this.takenCards.length == 8){
-            alert("FIM DE JOGO")
-           }
+           
     }
 
     chooseAttribute() {
-
         const attributePower = document.getElementById("attributePower");
         const attributeAgility = document.getElementById("attributeAgility");
         const attributeIntelligence = document.getElementById("attributeIntelligence");
         const scoreP1 = document.getElementById("scoreP1");
         const scoreP2 = document.getElementById("scoreP2");
-
 
         if (attributePower.checked === true) {
             if (this.player1Cards.attributesCharacter.power > this.player2Cards.attributesCharacter.power) {
@@ -161,27 +157,24 @@ class Game {
          <p>Intelligence: ${this.player2Cards.attributesCharacter.intelligence}</p>`
     }
 
-    proximaRodada() {
+    proximaRodada(scoreP1, scoreP2) {
         spaceCardP1.removeChild(spaceCardP1.lastChild);
         spaceCardP1.removeChild(spaceCardP1.lastChild);
         spaceCardP2.removeChild(spaceCardP2.lastChild);
         spaceCardP2.removeChild(spaceCardP2.lastChild);
+        this.fimDoJogo(scoreP1, scoreP2);
     };
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    fimDoJogo(scoreP1, scoreP2){
+        if(this.takenCards.length == 8){
+            const resultadoFinal = document.createElement("div");
+            resultadoFinal.classList.add("resultadoFinal");
+            proximaRodada.appendChild(resultadoFinal);
+            if(Number(scoreP1.innerText) > Number(scoreP2.innerText)){
+                resultadoFinal.innerText = "PLAYER 1 VENCEU O JOGO" 
+            } else if(Number(scoreP1.innerText) < Number(scoreP2.innerText)){
+                resultadoFinal.innerText = "PLAYER 2 VENCEU O JOGO" 
+            }
+        }
+    }
 }

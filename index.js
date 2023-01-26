@@ -5,9 +5,12 @@ const spaceCardP1 = document.getElementById("spaceCardP1");
 const spaceCardP2 = document.getElementById("spaceCardP2");
 const btnAttribute = document.getElementById("btnAttribute");
 const attributePower = document.getElementById("attributePower")
-const attributeAgility = document.getElementById("attributeAgility")
-const attributeIntelligence = document.getElementById("attributeIntelligence")
-const BtnProxima = document.getElementById("BtnProxima")
+const attributeAgility = document.getElementById("attributeAgility");
+const attributeIntelligence = document.getElementById("attributeIntelligence");
+const BtnProxima = document.getElementById("BtnProxima");
+const proximaRodada = document.getElementById("proximaRodada");
+const scoreP1 = document.getElementById("scoreP1");
+const scoreP2 = document.getElementById("scoreP2");
 
 const game = new Game();
 
@@ -49,5 +52,5 @@ BtnProxima.addEventListener("click", () => {
     attributePower.disabled = false;
     attributeAgility.disabled = false;
     attributeIntelligence.disabled = false;
-    game.proximaRodada()
+    game.proximaRodada(scoreP1, scoreP2)
 })
